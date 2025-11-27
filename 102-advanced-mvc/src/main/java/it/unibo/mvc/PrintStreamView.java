@@ -15,7 +15,7 @@ public final class PrintStreamView implements DrawNumberView {
     private final PrintStream out;
 
     /**
-     * Builds a new PrintStreamView.
+     * Builds a {@link PrintStreamView} that writes on the given {@link PrintStream}.
      *
      * @param stream the {@link PrintStream} where to write
      */
@@ -29,7 +29,7 @@ public final class PrintStreamView implements DrawNumberView {
 
     /**
      * Builds a {@link PrintStreamView} that writes on file, given a path.
-     * 
+     *
      * @param path a file path
      * @throws FileNotFoundException if the file is not present
      */
@@ -59,6 +59,11 @@ public final class PrintStreamView implements DrawNumberView {
     @Override
     public void result(final DrawResult res) {
         out.println(res.getDescription());
+    }
+
+    @Override
+    public void displayError(final String message) {
+        out.println("[ERROR]: " + message);
     }
 
 }

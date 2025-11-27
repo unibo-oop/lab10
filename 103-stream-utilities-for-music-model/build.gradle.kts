@@ -34,5 +34,5 @@ val test by tasks.getting(Test::class) {
     testLogging {
         events(*(org.gradle.api.tasks.testing.logging.TestLogEvent.values())) // events("passed", "skipped", "failed")
     }
-    testLogging.showStandardStreams = true
+    testLogging.showStandardStreams = true    
 }
